@@ -8,7 +8,9 @@ class MyHeader extends Component {
     tasks: [],
     nextId: UUID(),
     input: "",
-    editItem: false
+    editItem: false,
+    completed: [],
+    completedTask: ""
   };
   handleInputChange = e => {
     this.setState({
@@ -68,13 +70,28 @@ class MyHeader extends Component {
   editTask = id => {
     const filterTask = this.state.tasks.filter(input => input.id !== id);
     const selectedTask = this.state.tasks.find(input => input.id === id);
-    console.log(selectedTask);
+    // console.log(selectedTask);
     this.setState({
       tasks: filterTask,
       input: selectedTask.content,
       id: id,
       editItem: true
     });
+    //console.log(this.state.input);
+  };
+  handlecompletedTask = id => {
+    const filterTask = this.state.tasks.filter(input => input.id !== id);
+    const selectedTask = this.state.tasks.find(input => input.id === id);
+    //console.log(selectedTask);
+    const completedList = { ...this.state.completed, selectedTask };
+
+    this.setState({
+      tasks: filterTask,
+      completed: completedList,
+      completedTask: selectedTask.content,
+      id: id
+    });
+    //console.log(this.state.completed);
   };
 
   // // emptyInput() {
@@ -110,6 +127,7 @@ class MyHeader extends Component {
             deleteTask={this.deleteTask}
             editTask={this.editTask}
             editItem={this.editItem}
+            completed={this.state.completed}
           />
         </form>
       </div>
