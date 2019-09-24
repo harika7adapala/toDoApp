@@ -21,14 +21,6 @@ class MyHeader extends Component {
 
   addTodo = e => {
     e.preventDefault();
-    /**
-     * type task = {
-     *  id: UUID,
-     *  content: String,
-     *  completed: bool,
-     * }
-     */
-
     if (this.state.input === "") {
       alert("todo cannot be empty");
     } else {
@@ -73,35 +65,26 @@ class MyHeader extends Component {
   editTask = id => {
     const filterTask = this.state.tasks.filter(input => input.id !== id);
     const selectedTask = this.state.tasks.find(input => input.id === id);
-    // console.log(selectedTask);
     this.setState({
       tasks: filterTask,
       input: selectedTask.content,
       id: id,
       editItem: true
     });
-    //console.log(this.state.input);
   };
 
   handlecompletedTask = id => {
     const filterTask = this.state.tasks.filter(input => input.id !== id);
     const selectedTask = this.state.tasks.find(input => input.id === id);
-    //console.log(selectedTask);
     const completedList = [...this.state.completed, selectedTask];
-
     this.setState({
       tasks: filterTask,
       completed: completedList,
       completedTask: selectedTask.content,
       id: id
     });
-    //console.log(this.state.completed);
   };
 
-  // // emptyInput() {
-  // //   if (this.state.content === "") return <alert>Enter some task first</alert>;
-  // //   return this.addTodo;
-  // }
   render() {
     return (
       <div>

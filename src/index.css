@@ -1,17 +1,7 @@
-.heading.header input {
-  margin: 10;
-  padding: 50px;
-  background-color: goldenrod;
-  font-family: "Helvetica Neue";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.form-header {
+  margin: 4px;
+  background-color: aquamarine;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-#root {
-  display: flex;
-  justify-content: center;
+.list-group {
+  background-position: left;
 }
