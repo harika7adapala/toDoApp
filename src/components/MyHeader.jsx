@@ -55,18 +55,21 @@ class MyHeader extends Component {
     addWarning += this.state.input === "" ? "warning" : "success";
     return addWarning;
   }
+
   clearTasks = c => {
     c.preventDefault();
     this.setState({
       tasks: []
     });
   };
+
   deleteTask = id => {
     const filterTask = this.state.tasks.filter(input => input.id !== id);
     this.setState({
       tasks: filterTask
     });
   };
+
   editTask = id => {
     const filterTask = this.state.tasks.filter(input => input.id !== id);
     const selectedTask = this.state.tasks.find(input => input.id === id);
@@ -79,6 +82,7 @@ class MyHeader extends Component {
     });
     //console.log(this.state.input);
   };
+
   handlecompletedTask = id => {
     const filterTask = this.state.tasks.filter(input => input.id !== id);
     const selectedTask = this.state.tasks.find(input => input.id === id);
