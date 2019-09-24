@@ -118,7 +118,7 @@ class MyHeader extends Component {
             type="button"
             onClick={this.addTodo}
           >
-            Add Task
+            {this.state.editItem ? "submit" : "Add task"}
           </button>
 
           <TodoList
