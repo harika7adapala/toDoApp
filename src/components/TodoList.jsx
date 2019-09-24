@@ -10,10 +10,10 @@ class todolist extends Component {
       clearTask,
       deleteTask,
       editTask,
-      completedTask
+      handlecompletedTask,
+      completed
     } = this.props;
-    console.log(completedTask);
-
+    console.log(completed);
     return (
       <div>
         <ul className="list-group my-5 ">
@@ -26,7 +26,7 @@ class todolist extends Component {
                 content={task.content}
                 editTask={editTask}
                 deleteTask={deleteTask}
-                completedTask={completedTask}
+                handlecompletedTask={handlecompletedTask}
               />
             );
           })}
@@ -38,7 +38,16 @@ class todolist extends Component {
           </button>
         </ul>
         <div>
-          <Completed />
+          <h1>Done</h1>
+          <label>you have succesfully completd the task</label>
+          {completed.map(completedTask => {
+            return (
+              <Completed
+                key={completedTask.id}
+                completedTask={completedTask.content}
+              />
+            );
+          })}
         </div>
       </div>
     );

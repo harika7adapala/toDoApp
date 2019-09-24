@@ -83,7 +83,7 @@ class MyHeader extends Component {
     const filterTask = this.state.tasks.filter(input => input.id !== id);
     const selectedTask = this.state.tasks.find(input => input.id === id);
     //console.log(selectedTask);
-    const completedList = { ...this.state.completed, selectedTask };
+    const completedList = [...this.state.completed, selectedTask];
 
     this.setState({
       tasks: filterTask,
@@ -101,7 +101,7 @@ class MyHeader extends Component {
   render() {
     return (
       <div>
-        <form className="text-center">
+        <form className="form-header text-center">
           <h1>Tasker</h1>
 
           <label className="m-4">Things to do: </label>
@@ -128,6 +128,7 @@ class MyHeader extends Component {
             editTask={this.editTask}
             editItem={this.editItem}
             completed={this.state.completed}
+            handlecompletedTask={this.handlecompletedTask}
           />
         </form>
       </div>

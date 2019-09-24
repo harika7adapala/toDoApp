@@ -1,6 +1,12 @@
 import React from "react";
 
-function displayItem({ content, deleteTask, editTask, id, completedTask }) {
+function displayItem({
+  content,
+  deleteTask,
+  editTask,
+  id,
+  handlecompletedTask
+}) {
   function handleEditButtonClick(evt) {
     evt.preventDefault();
     editTask(id);
@@ -11,7 +17,7 @@ function displayItem({ content, deleteTask, editTask, id, completedTask }) {
   }
   function completedButton(evt) {
     evt.preventDefault();
-    completedTask(id);
+    handlecompletedTask(id);
   }
 
   return (
