@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class completedTask extends Component {
-  state = {};
   render() {
     const { completedTask } = this.props;
     return (
