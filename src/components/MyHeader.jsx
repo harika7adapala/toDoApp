@@ -12,6 +12,9 @@ class MyHeader extends Component {
     completed: [],
     completedTask: ""
   };
+  componentDidUpdate(prevprop, prevstate) {
+    this.input.focus();
+  }
   handleInputChange = e => {
     this.setState({
       ...this.state,
@@ -110,37 +113,40 @@ class MyHeader extends Component {
       <div className="div-heading">
         <h1 className="main-heading">Tasker</h1>
 
-        <form className="form-header">
-          <label className="m-4">Things To-Do: </label>
+        {/* <form className="form-header"> */}
+        <label className="m-4">Things To-Do: </label>
 
-          <input
-            className="adding-todo"
-            type="Text"
-            name="addTodo"
-            placeholder="Enter your task"
-            value={this.state.input}
-            onChange={this.handleInputChange}
-          ></input>
-          <button
-            className={this.nullWarning()}
-            type="button"
-            onClick={this.addTodo}
-          >
-            {this.state.editItem ? "submit" : "Add task"}
-          </button>
+        <input
+          id="add-text"
+          className="adding-todo"
+          type="Text"
+          name="addTodo"
+          placeholder="Enter your task"
+          value={this.state.input}
+          onChange={this.handleInputChange}
+          autoFocus="text"
+          ref={c => (this.input = c)}
+        ></input>
+        <button
+          className={this.nullWarning()}
+          type="button"
+          onClick={this.addTodo}
+        >
+          {this.state.editItem ? "submit" : "Add task"}
+        </button>
 
-          <TodoList
-            tasks={this.state.tasks}
-            clearTask={this.clearTasks}
-            deleteTask={this.deleteTask}
-            editTask={this.editTask}
-            editItem={this.editItem}
-            completed={this.state.completed}
-            handlecompletedTask={this.handlecompletedTask}
-            handlingRedoTask={this.handlingRedoTask}
-            clearCompleted={this.clearCompleted}
-          />
-        </form>
+        <TodoList
+          tasks={this.state.tasks}
+          clearTask={this.clearTasks}
+          deleteTask={this.deleteTask}
+          editTask={this.editTask}
+          editItem={this.editItem}
+          completed={this.state.completed}
+          handlecompletedTask={this.handlecompletedTask}
+          handlingRedoTask={this.handlingRedoTask}
+          clearCompleted={this.clearCompleted}
+        />
+        {/* </form> */}
       </div>
     );
   }
