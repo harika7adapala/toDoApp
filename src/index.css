@@ -1,7 +1,41 @@
+.div-heading {
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 50px;
+  border-end-start-radius: 100px;
+}
 .form-header {
-  margin: 4px;
-  background-color: aquamarine;
+  border-radius: 10px;
+  text-align: left;
+}
+.list-group-item {
+  border-radius: 10px;
+  border-style: dotted;
+  list-style-type: disc;
+}
+.main-heading {
+  font-style: bold;
+
+  text-align: center;
+  background-color: cadetblue;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  border: 2px solid crimson;
+  border-radius: 10px;
+}
+.adding-todo {
+  border: 1px solid orange;
+  text-align: left;
 }
 .list-group {
-  background-position: left;
+  border-radius: 10px;
+  text-align: center;
+}
+.div-todolist {
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+.div-completedtask {
+  background-color: rgba(116, 78, 53, 0.37);
+  border-radius: 10px;
 }

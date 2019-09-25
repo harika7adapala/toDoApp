@@ -7,7 +7,7 @@ function completedTask({ completedTask, handlingRedoTask, id }) {
   }
   return (
     <div>
-      <ul className="list-group my-2">
+      <ul className="list-group ">
         <li className="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
           <h6>{completedTask}</h6>
           <button className="btn btn-dark" onClick={handleRedoButton}>

@@ -12,35 +12,37 @@ class todolist extends Component {
       editTask,
       handlecompletedTask,
       completed,
-      handlingRedoTask
+      handlingRedoTask,
+      clearCompleted
     } = this.props;
 
     return (
       <div>
-        <ul className="list-group my-10">
+        <div className="div-todolist text-center">
           <h3 className="text-capitalize text-center">Todo list</h3>
-          {tasks.map(task => {
-            return (
-              <DisplayItem
-                key={task.id}
-                id={task.id}
-                content={task.content}
-                editTask={editTask}
-                deleteTask={deleteTask}
-                handlecompletedTask={handlecompletedTask}
-              />
-            );
-          })}
+          <ul className="list-group m-4">
+            {tasks.map(task => {
+              return (
+                <DisplayItem
+                  key={task.id}
+                  id={task.id}
+                  content={task.content}
+                  editTask={editTask}
+                  deleteTask={deleteTask}
+                  handlecompletedTask={handlecompletedTask}
+                />
+              );
+            })}
+          </ul>
           <button
-            className="btn btn-danger text-captalize mt-2"
+            className="btn btn-danger text-captalize my-2 "
             onClick={clearTask}
           >
-            Reset
+            Reset To-Do
           </button>
-        </ul>
-        <div>
-          <h1>Done</h1>
-          <label>you have succesfully completd the task</label>
+        </div>
+        <div className="div-completedtask text-center my-3">
+          <h1>Completed Tasks</h1>
           {completed.map(completedTask => {
             return (
               <Completed
@@ -51,6 +53,12 @@ class todolist extends Component {
               />
             );
           })}
+          <label>you have succesfully completd the tasks</label>
+          <div>
+            <button className="btn btn-danger m-2" onClick={clearCompleted}>
+              Reset Completed
+            </button>
+          </div>
         </div>
       </div>
     );

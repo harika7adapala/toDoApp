@@ -99,14 +99,19 @@ class MyHeader extends Component {
       id: id
     });
   };
-
+  clearCompleted = c => {
+    c.preventDefault();
+    this.setState({
+      completed: []
+    });
+  };
   render() {
     return (
       <div className="div-heading">
         <h1 className="main-heading">Tasker</h1>
 
         <form className="form-header">
-          <label className="m-4">Things to do: </label>
+          <label className="m-4">Things To-Do: </label>
 
           <input
             className="adding-todo"
@@ -133,6 +138,7 @@ class MyHeader extends Component {
             completed={this.state.completed}
             handlecompletedTask={this.handlecompletedTask}
             handlingRedoTask={this.handlingRedoTask}
+            clearCompleted={this.clearCompleted}
           />
         </form>
       </div>

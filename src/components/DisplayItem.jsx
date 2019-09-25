@@ -28,7 +28,7 @@ function displayItem({
           <i className="material-icons">delete</i>
         </span>
 
-        <button className="btn btn-info " onClick={handleEditButtonClick}>
+        <button className="btn btn-info m-1 " onClick={handleEditButtonClick}>
           <i className="material-icons ">mode_edit</i>
         </button>
         <button className="btn btn-primary" onClick={completedButton}>
