@@ -29,7 +29,6 @@ function displayItem({
         </span>
 
         <button className="btn btn-info " onClick={handleEditButtonClick}>
-          Edit
           <i className="material-icons ">mode_edit</i>
         </button>
         <button className="btn btn-primary" onClick={completedButton}>

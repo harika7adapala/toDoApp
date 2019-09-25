@@ -11,13 +11,14 @@ class todolist extends Component {
       deleteTask,
       editTask,
       handlecompletedTask,
-      completed
+      completed,
+      handlingRedoTask
     } = this.props;
-    console.log(completed);
+
     return (
       <div>
-        <ul className="list-group my-5 ">
-          <h3 className="text-capitalize">Todo list</h3>
+        <ul className="list-group my-10">
+          <h3 className="text-capitalize text-center">Todo list</h3>
           {tasks.map(task => {
             return (
               <DisplayItem
@@ -44,7 +45,9 @@ class todolist extends Component {
             return (
               <Completed
                 key={completedTask.id}
+                id={completedTask.id}
                 completedTask={completedTask.content}
+                handlingRedoTask={handlingRedoTask}
               />
             );
           })}

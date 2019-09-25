@@ -85,15 +85,31 @@ class MyHeader extends Component {
     });
   };
 
+  handlingRedoTask = id => {
+    const filterTask = this.state.completed.filter(
+      completedTask => completedTask.id !== id
+    );
+    const selectedTask = this.state.completed.find(
+      completedTask => completedTask.id === id
+    );
+    const updatedRedoTask = [...this.state.tasks, selectedTask];
+    this.setState({
+      tasks: updatedRedoTask,
+      completed: filterTask,
+      id: id
+    });
+  };
+
   render() {
     return (
-      <div>
-        <form className="form-header text-center">
-          <h1>Tasker</h1>
+      <div className="div-heading">
+        <h1 className="main-heading">Tasker</h1>
 
+        <form className="form-header">
           <label className="m-4">Things to do: </label>
 
           <input
+            className="adding-todo"
             type="Text"
             name="addTodo"
             placeholder="Enter your task"
@@ -116,6 +132,7 @@ class MyHeader extends Component {
             editItem={this.editItem}
             completed={this.state.completed}
             handlecompletedTask={this.handlecompletedTask}
+            handlingRedoTask={this.handlingRedoTask}
           />
         </form>
       </div>
