@@ -1,13 +1,41 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.div-heading {
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 50px;
+  border-end-start-radius: 100px;
 }
+.form-header {
+  border-radius: 10px;
+  text-align: left;
+}
+.list-group-item {
+  border-radius: 10px;
+  border-style: dotted;
+  list-style-type: disc;
+}
+.main-heading {
+  font-style: bold;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  text-align: center;
+  background-color: cadetblue;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  border: 2px solid crimson;
+  border-radius: 10px;
+}
+.adding-todo {
+  border: 1px solid orange;
+  text-align: left;
+}
+.list-group {
+  border-radius: 10px;
+  text-align: center;
+}
+.div-todolist {
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+.div-completedtask {
+  background-color: rgba(116, 78, 53, 0.37);
+  border-radius: 10px;
 }
