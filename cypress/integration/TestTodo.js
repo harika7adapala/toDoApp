@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /// <reference types="Cypress" />
 
-describe("My First Test", function() {
+describe("Todo app testing", function() {
   it("visits the Todo app check for heading", function() {
     cy.visit("http://localhost:3000/");
     cy.get("h1.main-heading").should("contain.text", "Tasker");
@@ -11,6 +11,9 @@ describe("My First Test", function() {
     cy.get("[data-cy=todo-lable]").should("contain.text", "Things To-Do");
     cy.get("input.addingTodo").should("not.have.value", " ");
     cy.contains("Add task").click();
+    cy.on("window:alert", str => {
+      expect(str).to.equal("todo cannot be empty");
+    });
   });
   it("entering ,adding and check the length ", function() {
     cy.get("input.addingTodo").type("baby shower");
