@@ -21,10 +21,17 @@ function displayItem({
   }
 
   return (
-    <li className="list-group-item list-group-item-action list-group-item-dark d-flex justify-content-between">
-      <h6>{content}</h6>
+    <li
+      className="list-group-item list-group-item-action list-group-item-dark d-flex justify-content-between"
+      data-cy="todo-list"
+    >
+      <h6 data-cy="display-todo">{content}</h6>
       <div className="todo-icon">
-        <span className="btn btn-danger" onClick={deletebutton}>
+        <span
+          className="btn btn-danger"
+          data-cy="delete-button"
+          onClick={deletebutton}
+        >
           <i className="material-icons">delete</i>
         </span>
 

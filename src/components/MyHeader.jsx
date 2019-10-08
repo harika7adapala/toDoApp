@@ -10,7 +10,8 @@ class MyHeader extends Component {
     input: "",
     editItem: false,
     completed: [],
-    completedTask: ""
+    completedTask: "",
+    buttonclick: false
   };
   componentDidUpdate(prevprop, prevstate) {
     this.input.focus();
@@ -39,7 +40,8 @@ class MyHeader extends Component {
           ...currentState,
           tasks: updatedTasks,
           nextId: UUID(),
-          input: ""
+          input: "",
+          buttonclick: true
         };
       });
     }
@@ -112,28 +114,32 @@ class MyHeader extends Component {
     return (
       <div className="div-heading">
         <h1 className="main-heading">Tasker</h1>
+        <div>
+          {/* <form className="form-header"> */}
+          <label className="m-4" data-cy="todo-lable">
+            Things To-Do:{" "}
+          </label>
 
-        {/* <form className="form-header"> */}
-        <label className="m-4">Things To-Do: </label>
+          <input
+            id="add-text"
+            className="addingTodo"
+            type="Text"
+            name="addTodo"
+            placeholder="Enter your task"
+            value={this.state.input}
+            onChange={this.handleInputChange}
+            autoFocus="text"
+            ref={c => (this.input = c)}
+          ></input>
 
-        <input
-          id="add-text"
-          className="adding-todo"
-          type="Text"
-          name="addTodo"
-          placeholder="Enter your task"
-          value={this.state.input}
-          onChange={this.handleInputChange}
-          autoFocus="text"
-          ref={c => (this.input = c)}
-        ></input>
-        <button
-          className={this.nullWarning()}
-          type="button"
-          onClick={this.addTodo}
-        >
-          {this.state.editItem ? "submit" : "Add task"}
-        </button>
+          <button
+            className={this.nullWarning()}
+            type="button"
+            onClick={this.addTodo}
+          >
+            {this.state.editItem ? "submit" : "Add task"}
+          </button>
+        </div>
 
         <TodoList
           tasks={this.state.tasks}
