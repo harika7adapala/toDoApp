@@ -42,7 +42,7 @@ class todolist extends Component {
           </button>
         </div>
         <div className="div-completedtask text-center my-3">
-          <h1>Completed Tasks</h1>
+          <h3>Completed Tasks</h3>
           {completed.map(completedTask => {
             return (
               <Completed
